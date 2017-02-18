@@ -1,0 +1,907 @@
+/* Copyright (c) 2009, Yahoo! Inc. All rights reserved. Code licensed under the BSD License: http://developer.yahoo.net/yui/license.txt version: 3.0.0b1 build: 1160 */
+html{color:#000;background:#FFF;}body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;}table{border-collapse:collapse;border-spacing:0;}fieldset,img{border:0;}address,caption,cite,code,dfn,th,var{font-style:normal;font-weight:normal;}li{list-style:none;}caption,th{text-align:left;}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}q:before,q:after{content:'';}abbr,acronym{border:0;font-variant:normal;}sup{vertical-align:text-top;}sub{vertical-align:text-bottom;}input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;}input,textarea,select{*font-size:100%;}legend{color:#000;}
+
+/* HTML5 block items */
+
+article, aside, figure, footer, header,
+hgroup, menu, nav, section { display: block; }
+
+/* --  960px w/ 12 column grid -- */
+
+.wrap12 {
+  margin: 0 auto;
+  width: 960px;
+}
+
+
+.col12 {
+	margin-left: auto;
+	margin-right: auto;
+	width: 940px;
+    clear: both;
+}
+
+.col1, .col2, .col3, .col4,  .col5,  .col6,
+.col7, .col8, .col9, .col10, .col11 {
+  float: left;
+  margin-left: 10px;
+  margin-right: 10px;
+  overflow: visible;
+}
+.wrap12 .col1 { width:  60px; }
+.wrap12 .col2 { width: 140px; }
+.wrap12 .col3 { width: 220px; }
+.wrap12 .col4 { width: 300px; }
+.wrap12 .col5 { width: 380px; }
+.wrap12 .col6 { width: 460px; }
+.wrap12 .col7 { width: 540px; }
+.wrap12 .col8 { width: 620px; }
+.wrap12 .col9 { width: 700px; }
+.wrap12 .col10 { width: 780px; }
+.wrap12 .col11 { width: 860px; }
+
+
+.wrap1, .wrap2, .wrap3, .wrap4,  .wrap5, .wrap6,
+.wrap7, .wrap8, .wrap9, .wrap10, .wrap11 {
+  float: left;
+}
+.wrap1:after, .wrap2:after, .wrap3:after, 
+.wrap4:after, .wrap5:after, .wrap6:after,
+.wrap7:after, .wrap8:after, .wrap9:after,
+.wrap10:after, .wrap11:after, .wrap12:after,
+.clearfix:after {
+  content: "";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+.wrap12 .wrap1 { width:  80px; }
+.wrap12 .wrap2 { width: 160px; }
+.wrap12 .wrap3 { width: 240px; }
+.wrap12 .wrap4 { width: 320px; }
+.wrap12 .wrap5 { width: 400px; }
+.wrap12 .wrap6 { width: 480px; }
+.wrap12 .wrap7 { width: 560px; }
+.wrap12 .wrap8 { width: 640px; }
+.wrap12 .wrap9 { width: 720px; }
+.wrap12 .wrap10 { width: 800px; }
+.wrap12 .wrap11 { width: 880px; }
+
+.nomarginleft { margin-left: 0; }
+.nomarginright { margin-right: 0; }
+
+.pull0left, .pull1left, .pull2left,  .pull3left,
+.pull4left, .pull5left, .pull6left,  .pull7left,
+.pull8left, .pull9left, .pull10left, .pull11left {
+  float: left;
+  margin-right: 20px;
+  position: relative; /* IE6 fix */
+}
+.wrap12 .pull0left { margin-left:    0px; }
+.wrap12 .pull1left { margin-left:  -80px; }
+.wrap12 .pull2left { margin-left: -160px; }
+.wrap12 .pull3left { margin-left: -240px; }
+.wrap12 .pull4left { margin-left: -320px; }
+.wrap12 .pull5left { margin-left: -400px; }
+.wrap12 .pull6left { margin-left: -480px; }
+.wrap12 .pull7left { margin-left: -560px; }
+.wrap12 .pull8left { margin-left: -640px; }
+.wrap12 .pull9left { margin-left: -720px; }
+.wrap12 .pull10left { margin-left: -800px; }
+.wrap12 .pull11left { margin-left: -880px; }
+
+.pull0right, .pull1right, .pull2right,  .pull3right,
+.pull4right, .pull5right, .pull6right,  .pull7right,
+.pull8right, .pull9right, .pull10right, .pull11right {
+  float: right;
+  margin-left: 20px;
+  position: relative; /* IE6 fix */
+}
+.wrap12 .pull0right { margin-right:    0px; }
+.wrap12 .pull1right { margin-right:  -80px; }
+.wrap12 .pull2right { margin-right: -160px; }
+.wrap12 .pull3right { margin-right: -240px; }
+.wrap12 .pull4right { margin-right: -320px; }
+.wrap12 .pull5right { margin-right: -400px; }
+.wrap12 .pull6right { margin-right: -480px; }
+.wrap12 .pull7right { margin-right: -560px; }
+.wrap12 .pull8right { margin-right: -640px; }
+.wrap12 .pull9right { margin-right: -720px; }
+.wrap12 .pull10right  { margin-right: -800px; }
+.wrap12 .pull11right  { margin-right: -880px; }
+
+.wrap12 .space1right { margin-right:  90px; }
+.wrap12 .space2right { margin-right: 170px; }
+.wrap12 .space3right { margin-right: 250px; }
+.wrap12 .space4right { margin-right: 330px; }
+.wrap12 .space5right { margin-right: 410px; }
+.wrap12 .space6right { margin-right: 490px; }
+.wrap12 .space7right { margin-right: 570px; }
+.wrap12 .space8right { margin-right: 650px; }
+.wrap12 .space9right { margin-right: 730px; }
+.wrap12 .space10right { margin-right: 810px; }
+.wrap12 .space11right { margin-right: 890px; }
+
+.wrap12 .space1left { margin-left:  90px; }
+.wrap12 .space2left { margin-left: 170px; }
+.wrap12 .space3left { margin-left: 250px; }
+.wrap12 .space4left { margin-left: 330px; }
+.wrap12 .space5left { margin-left: 410px; }
+.wrap12 .space6left { margin-left: 490px; }
+.wrap12 .space7left { margin-left: 570px; }
+.wrap12 .space8left { margin-left: 650px; }
+.wrap12 .space9left { margin-left: 730px; }
+.wrap12 .space10left { margin-left: 810px; }
+.wrap12 .space11left { margin-left: 890px; }
+
+
+/* `Clear Floated Elements
+----------------------------------------------------------------------------------------------------*/
+ 
+/* http://sonspring.com/journal/clearing-floats */
+ 
+.clear {
+    clear: both;
+    display: block;
+    overflow: hidden;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
+ 
+/* http://perishablepress.com/press/2009/12/06/new-clearfix-hack */
+ 
+.clearfix:after {
+    clear: both;
+    content: '';
+    display: block;
+    font-size: 0;
+    line-height: 0;
+    visibility: hidden;
+    width: 0;
+    height: 0;
+}
+ 
+/*
+The following zoom:1 rule is specifically for IE6 + IE7.
+Move to separate stylesheet if invalid CSS is a problem.
+*/
+* html .clearfix,
+*:first-child+html .clearfix {
+    zoom: 1;
+}
+
+
+/**** Foundation ****/
+
+html, body {
+    background-color: #EEE;
+}
+
+body {
+    color: #222;
+    font-family: 'Proxima Nova','proxima-nova-1','proxima-nova-2', 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.5em;
+    font-size: 14px;
+}
+
+a {
+    color: #426BEC;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #222;
+    background: hsla(330,100%,50%,.1);
+}
+
+/**************************
+**  Site Header
+**************************/
+
+#site-header {
+    position: relative;
+    font-size: 17px;
+    line-height: 22px;
+}
+
+#site-header #branding {
+    position: absolute;
+    background: #222;
+    width: 100%;
+    min-width: 940px;
+    color: #EEE;
+    text-transform: uppercase;
+    z-index: 100;
+    left: 0;
+}
+
+body.articles #site-header #branding { top: 0;}
+body.resources #site-header #branding { top: 22px;}
+body.portfolio #site-header #branding { top: 44px;}
+body.about #site-header #branding { top: 66px;}
+
+#site-header #branding p {
+    width: 990px;
+    margin: 0 auto;
+    font-weight: 800;
+    padding: 0 10px;
+    position: relative;
+    z-index: 100;
+}
+#site-header #branding p a {
+    color: #FFF;
+}
+#site-header #branding p a:hover { color: #426BEC; }
+
+
+#site-header a:hover {
+    background: none;
+}
+
+#site-header #branding p a * {
+    display: block; 
+    float: left;
+
+}
+#site-header #branding p span { font-weight: 100; }
+
+#site-header ol {
+    width: 960px;
+    margin: 0 auto 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+#site-header ol li {
+    z-index: 200;
+    position: relative;
+    top: 0;
+    left: 170px;
+    width: 780px;
+    color: #EEE;
+}
+
+
+#site-header ol a {
+    color: #222;
+}
+body.articles #site-header ol .articles a,
+body.resources #site-header ol .resources a,
+body.portfolio #site-header ol .portfolio a,
+body.about #site-header ol .about a { 
+    color: #FFF; 
+}
+
+
+#site-header ol .articles a:hover,
+body.articles #site-header ol .articles a:hover,
+body.articles.dark #site-header ol .articles a:hover { color: #3C7; }
+
+#site-header ol .resources a:hover,
+body.resources #site-header ol .resources a:hover,
+body.dark.resources #site-header ol .resources a:hover { color: #F90; }
+
+#site-header ol .portfolio a:hover,
+body.portfolio #site-header ol .portfolio a:hover { color: #85E; }
+
+#site-header ol .about a:hover,
+body.about #site-header ol .about a:hover { color: #58E; }
+
+#site-header ol em {
+    font-style: normal;
+}
+
+#site-header ol time {
+    margin-left: 0.8em;
+    font-weight: 200;
+    font-size: 14px;
+    line-height: 22px;
+    letter-spacing: 0.15em;
+}
+
+#site-header .older-newer {
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+}
+
+#site-header .older-newer a { margin-left: 10px; }
+
+/**** Short URL ****/
+
+.short-url {
+    position: relative;
+}
+
+.short-url{
+    -webkit-transition: all 0.2s ease-out;
+       -moz-transition: all 0.2s ease-out;
+         -o-transition: all 0.2s ease-out;
+            transition: all 0.2s ease-out;
+}
+
+#site-header .short-url {
+    display: inline-block;
+    vertical-align: top;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    margin-top: 1px;
+    margin-left: 0.5em;
+    line-height: 20px;
+    -webkit-border-radius: 10px;
+       -moz-border-radius: 10px;
+            border-radius: 10px;
+}
+
+#site-header .short-url:hover {
+    background: #FFF;
+    color: #222;
+}
+
+#site-footer .short-url {
+    top: -30px;
+    color: #EEE;
+    font-weight: 600;
+    font-size: 17px;
+}
+
+.short-url details {
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    left: 20px;
+    top: 0;
+    height: 22px;
+    background: #222;
+    color: #EEE;
+}
+
+#site-header .short-url:hover { cursor: pointer; }
+
+
+
+.short-url input {
+    background: none;
+    width: 200px;
+    border: none;
+    font-family: inherit;
+    font-style: italic;
+    color: inherit;
+    font-size: 15px;
+    font-weight: 600;
+    color: #FFF;
+    padding-left: 0.2em;
+}
+
+/* no Webkit bluish outline when focused. Grifted from dribbble's css.  Thanks Dan! */
+.short-url input:focus { outline-width: 0; }
+
+
+#site-header .short-url,
+#site-header .short-url details,
+#site-header .short-url input,
+#site-footer .short-url,
+#site-footer .short-url details,
+#site-footer .short-url input {
+    -webkit-transition: all 0.2s ease-out;
+       -moz-transition: all 0.2s ease-out;
+         -o-transition: all 0.2s ease-out;
+            transition: all 0.2s ease-out;
+
+}
+
+#site-header .short-url details {
+    opacity: 0;
+    width: 0;
+    top: -1px;
+    line-height: 22px;
+    z-index: 100;
+}
+
+#site-header .short-url:hover details {
+    opacity: 1;
+    width: 300px;
+}
+
+#site-footer .short-url,
+#site-footer .short-url details {
+    color: #666;
+}
+
+
+#site-footer .short-url:hover,
+#site-footer .short-url:hover details {
+    color: #EEE;
+}
+
+#site-footer .short-url input {
+    color: #888;
+}
+
+#site-footer .short-url:hover input {
+    color: #FFF;
+}
+
+
+
+/**** RSS Icon ****/
+
+#site-header .rss {
+    position: absolute;
+    top: 3px;
+    left: 4px;
+    width: 17px;
+    height: 17px;
+    overflow: hidden;
+}
+
+.rss a {
+    display: block;
+    width: 13px;
+    height: 13px;
+    background: #F90;
+    position: relative;
+    overflow: hidden;
+    text-indent: -9999px;
+    border: 2px solid;
+    -webkit-border-radius: 3px;
+       -moz-border-radius: 3px;
+            border-radius: 3px;
+}
+
+.rss a span {
+    display: block;
+    position: absolute;
+}
+
+.rss a .dot {
+    width: 3px;
+    height: 3px;
+    left: 0;
+    top: 10px;
+    background: #FFF;
+    -webkit-border-radius: 1.5px;
+       -moz-border-radius: 1.5px;
+            border-radius: 1.5px;
+}
+
+.rss a .ring {
+    border: 3px solid #FFF;
+}
+
+.rss a .inside {
+    width: 10px;
+    height: 10px;
+    left: -8px;
+    top: 5px;
+    -webkit-border-radius: 7px;
+       -moz-border-radius: 7px;
+            border-radius: 7px;
+}
+
+
+
+.rss a .outside {
+    width: 20px;
+    height: 20px;
+    left: -13px;
+    top: 0px;
+    -webkit-border-radius: 12px;
+       -moz-border-radius: 12px;
+            border-radius: 12px;
+}
+
+
+
+.rss a { background: #222; border-color: #222; }
+
+#site-header .rss a:hover { background: #F90; border-color: #F90; }
+#site-header .rss a:hover .dot { background: #FFF; }
+#site-header .rss a:hover .ring { border-color: #FFF; }
+
+/**************************
+**  Dark version of Site Header
+**************************/
+
+body.dark #site-header #branding {
+    background: #FFF;
+    color: #222;
+}
+
+body.dark #site-header #branding p a {
+    color: #222;
+}
+body.dark #site-header #branding p a:hover { color: #426BEC; }
+
+body.dark #site-header ol a {
+    color: #FFF;
+}
+body.articles.dark  #site-header ol .articles,
+body.articles.dark  #site-header ol .articles a,
+body.resources.dark  #site-header ol .resources,
+body.resources.dark  #site-header ol .resources a { 
+    color: #222; 
+}
+
+body.dark .rss a { background: #FFF; border-color: #FFF; }
+body.dark .rss a .dot { background: #222; }
+body.dark .rss a .ring { border-color: #222; }
+
+
+body.dark #site-header .short-url:hover {
+    background: #222;
+    color: #FFF;
+}
+
+body.dark #site-header .short-url details {
+    background: #FFF;
+    color: #444;
+}
+
+body.dark #site-header .short-url input {
+    color: #222;
+}
+
+/**************************
+**  Basic styles
+**************************/
+
+h1 {
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 56px;
+    line-height: 1.2em;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 0.5em;
+    line-height: 1.0em;
+}
+
+h3 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 0.5em;
+    line-height: 1.0em;
+}
+
+h4 {
+    font-size: 17px;
+    font-weight: 600;
+}
+
+p {
+    margin-bottom: 1.0em;
+}
+
+a.button {
+    font-size: 14px;
+    padding: 5px 15px;
+    color: #FFF;
+    background-color: #426BEC;
+    -webkit-border-radius: 15px;
+       -moz-border-radius: 15px;
+            border-radius: 15px;
+    -webkit-box-shadow: 0px 2px 5px hsla(0,0%,0%,.15);
+       -moz-box-shadow: 0px 2px 5px hsla(0,0%,0%,.15);
+            box-shadow: 0px 2px 5px hsla(0,0%,0%,.15);
+}
+a.button:hover {
+    background-color: #C36;
+}
+a.button, a.button:hover {
+    background-image: -moz-linear-gradient(-90deg, 
+        hsla(0,0%,100%,.2),  
+        hsla(0,0%,100%,.0) 50%, 
+        hsla(0,0%,0%,.0) 50%, 
+        hsla(0,0%,0%,.2) 100%  
+    );
+    background-image: -webkit-gradient(linear, 0 top, 0 bottom, 
+        from(hsla(0,0%,100%,.2)),
+        color-stop(50%, hsla(0,0%,100%,.0)), 
+        color-stop(50%, hsla(0,0%,0%,.0)), 
+        to(hsla(0,0%,0%,.2)) 
+    );
+}
+a.button:active {
+    -webkit-box-shadow: inset 0px 2px 13px hsla(0,0%,0%,.6);
+       -moz-box-shadow: inset 0px 2px 13px hsla(0,0%,0%,.6);
+            box-shadow: inset 0px 2px 13px hsla(0,0%,0%,.6);
+}
+
+
+pre, code {
+    background: #222;
+    color: #FFF;
+    font-family: Monaco, monospace;
+    font-size: 12px;
+    -webkit-border-radius: 3px;
+       -moz-border-radius: 3px;
+            border-radius: 3px;
+}
+
+pre {
+    padding: 10px;
+    margin-bottom: 1.0em;
+}
+
+
+/**************************
+**  Article List
+**************************/
+
+#content.article-list {
+    padding: 0 30px;
+}
+
+#content.article-list h1 {padding-left: 10px;}
+
+#content.article-list article {
+    width: 320px;
+    float: left;
+    margin-bottom: 40px;
+}
+
+#content.article-list .masoned article {
+    -webkit-transition: all 0.35s ease-out;
+       -moz-transition: all 0.35s ease-out;
+         -o-transition: all 0.35s ease-out;
+            transition: all 0.35s ease-out;
+    
+}
+
+#content.article-list article a {
+    display: block;
+    position: relative;
+    color: #3C7;
+    width: 300px;
+    padding: 10px;
+    background: #EEE;
+    -webkit-transition: all 0.12s ease-out;
+       -moz-transition: all 0.12s ease-out;
+         -o-transition: all 0.12s ease-out;
+            transition: all 0.12s ease-out;
+}
+
+#content.article-list article a:hover {
+    background: #FFF;
+    color: #222;
+    z-index: 100;
+    -webkit-transform: scale(1.1);
+       -moz-transform: scale(1.1);
+         -o-transform: scale(1.1);
+            transform: scale(1.1);
+    -webkit-box-shadow: 0 3px 6px hsla(0,0%,0%,0.2);
+       -moz-box-shadow: 0 3px 6px hsla(0,0%,0%,0.2);
+            box-shadow: 0 3px 6px hsla(0,0%,0%,0.2);
+}
+
+#content.article-list article a * { display: block;}
+
+#content.article-list article h2 {
+    margin-bottom: 0;
+    font-size: 28px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+#content.article-list article time {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 200;
+    margin-bottom: 5px;
+}
+
+/**************************
+**  Site Footer
+**************************/
+
+#site-footer {
+    background: #222;
+    color: #EEE;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    clear: both;
+}
+
+#site-footer p { margin-bottom: 0;}
+
+
+#site-footer a:hover {
+    background: none;
+}
+
+#site-footer .made-this p {
+    position: relative;
+    left: 0;
+    top: 0;
+    -webkit-transition: all 0.12s ease-out;
+       -moz-transition: all 0.12s ease-out;
+         -o-transition: all 0.12s ease-out;
+            transition: all 0.12s ease-out;
+}
+
+#site-footer .made-this a {
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 42px;
+    line-height: 0.9em;
+    margin-bottom: 10px;
+    display: block;
+    position: relative;
+    -webkit-transition: all 0.12s ease-out;
+       -moz-transition: all 0.12s ease-out;
+         -o-transition: all 0.12s ease-out;
+            transition: all 0.12s ease-out;
+}
+#site-footer .made-this a strong { font-weight: 800;}
+
+
+#site-footer .made-this a .given-name,
+#site-footer .made-this a .family-name,
+#site-footer .made-this a .made,
+#site-footer .made-this a .this {
+    color: #555;
+    text-shadow: 1px 1px #000, 2px 2px #000, 3px 3px #000, 4px 4px #000, 5px 5px #000, 6px 6px #000, 7px 7px #000, 8px 8px #000;
+    -webkit-transition: all 0.12s ease-out;
+       -moz-transition: all 0.12s ease-out;
+         -o-transition: all 0.12s ease-out;
+            transition: all 0.12s ease-out;
+    
+}
+
+#site-footer .made-this a:hover {
+    color: #FFF;
+    top: -3px;
+    left: -3px;
+}
+#site-footer .made-this a:hover .given-name {
+    color: #FFF;
+    text-shadow: 1px 1px #58E, 2px 2px #58E, 3px 3px #58E, 4px 4px #58E, 5px 5px #58E, 6px 6px #58E, 7px 7px #58E, 8px 8px #58E, 9px 9px #58E, 10px 10px #58E, 11px 11px #58E;
+}
+#site-footer .made-this a:hover .family-name {
+    color: #FFF;
+    text-shadow: 1px 1px #F90, 2px 2px #F90, 3px 3px #F90, 4px 4px #F90, 5px 5px #F90, 6px 6px #F90, 7px 7px #F90, 8px 8px #F90, 9px 9px #F90, 10px 10px #F90, 11px 11px #F90;
+}
+
+#site-footer .made-this a:hover .made {
+    color: #FFF;
+    text-shadow: 1px 1px #3C7, 2px 2px #3C7, 3px 3px #3C7, 4px 4px #3C7, 5px 5px #3C7, 6px 6px #3C7, 7px 7px #3C7, 8px 8px #3C7, 9px 9px #3C7, 10px 10px #3C7, 11px 11px #3C7;
+}
+
+#site-footer .made-this a:hover .this {
+    color: #FFF;
+    text-shadow: 1px 1px #426BEC, 2px 2px #426BEC, 3px 3px #426BEC, 4px 4px #426BEC, 5px 5px #426BEC, 6px 6px #426BEC, 7px 7px #426BEC, 8px 8px #426BEC, 9px 9px #426BEC, 10px 10px #426BEC, 11px 11px #426BEC;
+    
+}
+
+#site-footer .made-this .given-name {
+    display: block;
+    font-size: 76px;
+    line-height: 0.8em;
+}
+
+#site-footer .made-this .family-name {
+    display: block;
+    line-height: 0.9em;
+
+}
+
+#site-footer .copyright {
+    color: #555;
+    padding-left: 60px;
+    -webkit-transition: all 0.12s ease-out;
+       -moz-transition: all 0.12s ease-out;
+         -o-transition: all 0.12s ease-out;
+            transition: all 0.12s ease-out;
+}
+
+
+
+#site-footer .where-what {
+    font-weight: 200;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-align: center;
+    color: #555;
+
+}
+#site-footer .where-what > span { 
+  color: #555;
+  line-height: 1.05em;
+  text-shadow: 0 0px 1px #222;
+  width: 360px;
+  display: block; 
+  position: relative;
+  left: -30px;
+    -webkit-transform-origin: center bottom;
+       -moz-transform-origin: center bottom;
+         -o-transform-origin: center bottom;
+            transform-origin: center bottom;
+    -webkit-transition: all 0.2s ease-out;
+       -moz-transition: all 0.2s ease-out;
+         -o-transition: all 0.2s ease-out;
+            transition: all 0.2s ease-out;
+}
+#site-footer .where-what > span:hover {
+    color: #666;
+    text-shadow: 0 4px 1px #000;
+    -webkit-transform: scale(1.25);
+       -moz-transform: scale(1.25);
+         -o-transform: scale(1.25);
+            transform: scale(1.25);
+}
+
+#site-footer .where-what .being { font-size: 36px; }
+#site-footer .where-what .making { font-size: 22px; letter-spacing: 0.22em; word-spacing: 0.1em; }
+#site-footer .where-what .happy { font-size: 30px; }
+#site-footer .where-what .designer { font-size: 22px; letter-spacing: 0.15em; word-spacing: 0.15em;}
+#site-footer .where-what .living { font-size: 21px; }
+#site-footer .where-what .working { font-size: 12px; letter-spacing: 0.15em; line-height: 2.0em; font-weight: 500; }
+
+#site-footer .where-what a:hover { color: #FFF;  }
+
+#site-footer .also-made {
+    text-align: right;
+}
+
+#site-footer .also-made h3 {
+    text-transform: uppercase;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 17px;
+    letter-spacing: 0.4em;
+    line-height: 1.2em;
+    color: #555;
+}
+
+#site-footer .also-made li {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 26px;
+    line-height: 1.5em;
+}
+#site-footer .also-made li.jqmsnry{ font-size: 27px;}
+#site-footer .also-made li.curtis{ font-size: 22.5px;}
+#site-footer .also-made li.speechbub{ font-size: 24px;}
+
+.also-made a {
+    color: #EEE;
+    text-shadow: 1px 1px #D47, 2px 2px #D47, 3px 3px #D47;
+    position: relative;
+    top: 0;
+    left: 0;
+    -webkit-transition: all 0.12s ease-out;
+       -moz-transition: all 0.12s ease-out;
+         -o-transition: all 0.12s ease-out;
+            transition: all 0.12s ease-out;
+}
+.also-made a:hover {
+    color: #FFF;
+    top: -3px;
+    left: -3px;
+    text-shadow: 1px 1px #D47, 2px 2px #D47, 3px 3px #D47, 4px 4px #D47, 5px 5px #D47, 6px 6px #D47;
+}
+
+/**************************
+**  Web Fonts
+**************************/
+/*
+.tk_proxima_nova { visibility: hidden; }
+.no-js .tk_proxima_nova { visibility: visible; }
+.js.wf-active .tk_proxima_nova { visibility: visible;  }
+.js.wf-inactive .tk_proxima_nova { visibility: visible;  }
+*/
