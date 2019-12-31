@@ -473,6 +473,30 @@ module.exports = function(webpackEnv) {
               // See https://github.com/webpack/webpack/issues/6571
               sideEffects: true,
             },
+
+
+              // Special pre-processing so we can override the antd styles.
+            {
+              test: /\.less$/,
+              use: [
+                {
+                  loader: 'style-loader',
+                },
+                {
+                  loader: 'css-loader', // translates CSS into CommonJS
+                },
+                {
+                  loader: 'less-loader', // compiles Less to CSS
+                  options: {
+                    modifyVars: {
+                    'link-color': '#1DA57A',
+                    'primary-color': '#1DA57A',
+                    },
+                    javascriptEnabled: true
+                  }
+                }],
+            },
+
             // Adds support for CSS Modules, but using SASS
             // using the extension .module.scss or .module.sass
             {

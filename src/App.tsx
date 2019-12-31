@@ -2,21 +2,21 @@ import React from 'react';
 import {Col, Row, Typography, Button, BackTop, Icon, Carousel} from "antd";
 import styled from "styled-components";
 
-import ScispacyLogo from "./scispacy-logo.png";
-import ScispacyDemo from "./scispacyDemo.png";
-import ScispacyLinking from "./scispacyLinking.png";
+import ScispacyLogo from "./img/scispacy-logo.png";
+import ScispacyDemo from "./img/scispacyDemo.png";
+import ScispacyLinking from "./img/scispacyLinking.png";
 
-import AllennlpWebsite from "./allennlpWebsite.png";
-import SrlExample from "./srl.gif";
+import AllennlpWebsite from "./img/allennlpWebsite.png";
+import SrlExample from "./img/srl.gif";
 
-import ElmoResults from "./elmoResults.png";
-import ElmoImage from "./elmoImage.png";
+import ElmoResults from "./img/elmoResults.png";
+import ElmoImage from "./img/elmoImage.png";
 
-import AutocatWebsite from "./autocat.png";
-import AutocatExample from "./autocat.gif";
+import AutocatWebsite from "./img/autocat.png";
+import AutocatExample from "./img/autocat.gif";
 
-import Nhs0 from "./nhs0.png";
-import Nhs1 from "./nhs1.png";
+import Nhs0 from "./img/nhs0.png";
+import Nhs1 from "./img/nhs1.png";
 
 
 const BigTitle = styled.h1`
