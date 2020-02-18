@@ -1,5 +1,5 @@
 import React from 'react';
-import {Col, Row, Typography, Button, BackTop, Icon, Carousel} from "antd";
+import {Col as AntdCol, Row, Typography, Button, BackTop, Icon, Carousel} from "antd";
 import styled from "styled-components";
 
 import ScispacyLogo from "./img/scispacy-logo.png";
@@ -23,12 +23,21 @@ const BigTitle = styled.h1`
 font-size: 6rem;
 padding-top: 100px;
 font-weight: bold;
+/* 
+When the width is less than 720px (bootstrap md), scale the font size
+with respect to the view port.
+ */
+@media all and (max-width: 720px) {
+  font-size: 8vw;
+  text-align: center
+}
+
 `;
 
-const Padding = styled.h1`
+const Padding = styled.div`
 padding: 120px;
 `;
-const SmallPadding = styled.h1`
+const SmallPadding = styled.div`
 padding: 60px;
 `;
 
@@ -37,7 +46,66 @@ const Centered = styled.div`
     padding-right: 120px;
     margin: 0 auto;
     min-height: 700px;
+
+    @media all and (max-width: 720px) {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
 `;
+
+const leftColumnProps = {
+  md: {
+    span: 8
+  },
+  sm: {
+    span:24
+  },
+  xs: {
+    span:24
+  }
+}
+const rightColumnProps = {
+  md: {
+    span: 14,
+    offset: 2
+  },
+  sm: {
+    span: 24,
+    offset: 0
+  },
+  xs: {
+    span: 24,
+    offset: 0
+  }
+}
+const titleColumnProps = {
+  md: {
+    span: 16,
+    offset: 0
+  },
+  sm: {
+    span: 24,
+    offset: 0
+  },
+  xs: {
+    span: 24,
+    offset: 0
+  }
+}
+
+
+const Col = styled(AntdCol)`
+    /* 
+    When the width is less than 720px (bootstrap md), center
+    the column and slightly pad the bottom.
+    */
+    @media all and (max-width: 720px) {
+      text-align: center;
+      padding-bottom: 20px;
+    }
+`
+
 
 const App: React.FC = () => {
   return (
@@ -49,8 +117,8 @@ const App: React.FC = () => {
       </BackTop>
 
       <Centered>
-      <Row gutter={16}>
-        <Col span={18}>
+      <Row gutter={16} >
+        <Col {...titleColumnProps}>
           <BigTitle>
             Mark Neumann.
           </BigTitle>
@@ -58,7 +126,7 @@ const App: React.FC = () => {
       </Row>
 
       <Row gutter={16}>
-        <Col span={12}>
+        <Col {...titleColumnProps}>
         <Typography.Title type="secondary" level={3}>
           I'm a Senior Research Engineer at the 
           <a href="https://allenai.org/" target="_blank" rel="noopener noreferrer"> Allen Institute for Artificial Intelligence. </a>
@@ -81,22 +149,20 @@ const App: React.FC = () => {
       <Padding/>    
       <SmallPadding/>    
       <Row gutter={16} type="flex" justify="start" align="middle">
-        <Col span={6}>
+        <Col {...leftColumnProps}>
           <Typography.Title>
             AllenNLP
           </Typography.Title>
           <Typography.Paragraph strong>
            AllenNLP is an open-source NLP research library, built on PyTorch.
-           <ul>
-            <li>Abstrations for Deep Learning + NLP</li>
-            <li>Declarative JSON configuration files for reproducible experiments</li>
-           </ul>
+           It contains many useful abstrations for Deep Learning + NLP, as well as a
+           first class declarative JSON configuration specification for reproducible experiments.
           </Typography.Paragraph>
           <Button type="primary" href="https://allennlp.org" target="_blank">
             Install the library
           </Button>
         </Col>
-        <Col offset={2} span={14}>
+        <Col {...rightColumnProps}>
           <Carousel autoplay speed={300} effect="fade" dots={false}>
             <img src={AllennlpWebsite} alt="allennlp logo" width={800}></img>
             <img src={SrlExample} alt="allennlp logo" width={800}></img>
@@ -106,7 +172,7 @@ const App: React.FC = () => {
 
       <Padding/>    
       <Row gutter={16} type="flex" justify="start" align="middle">
-        <Col span={6}>
+        <Col {...leftColumnProps}>
           <Typography.Title>
             Elmo
           </Typography.Title>
@@ -120,7 +186,7 @@ const App: React.FC = () => {
             Read the paper
           </Button>
         </Col>
-        <Col offset={2} span={14}>
+        <Col {...rightColumnProps}>
           <Carousel autoplay speed={300} effect="fade" dots={false}>
             <img src={ElmoImage} alt="elmo" width={800}></img>
             <img src={ElmoResults} alt="elmo results" width={800}></img>
@@ -130,24 +196,21 @@ const App: React.FC = () => {
 
       <Padding/>    
       <Row gutter={16} type="flex" justify="start" align="middle">
-        <Col span={6}>
+        <Col {...leftColumnProps}>
           <Typography.Title>
             SciSpaCy
           </Typography.Title>
           <Typography.Paragraph strong>
-           ScispaCy is a Spacy pipeline for processing English Biomedical text.
+           ScispaCy is a Spacy pipeline for processing English Biomedical text. It contains
+           models for custom tokenisation, POS Tagging, NER, Entity Linking and Syntactic Parsing.
+           Scispacy is open source and freely available, with a public demo.
 
-           <ul>
-            <li>Custom Tokenisation, POS Tagging, NER, Entity Linking and Parsing</li>
-            <li>Open source</li>
-            <li>Easy to use public demo</li>
-           </ul>
           </Typography.Paragraph>
           <Button type="primary" href="https://allenai.github.io/scispacy/" target="_blank">
             Install the library
           </Button>
         </Col>
-        <Col offset={2} span={14}>
+        <Col {...rightColumnProps}>
           <Carousel autoplay speed={300} effect="fade" dots={false}>
             <img src={ScispacyLogo} alt="scispacy"></img>
             <img src={ScispacyDemo} alt="scispacy entities"></img>
@@ -158,7 +221,7 @@ const App: React.FC = () => {
 
       <Padding/>    
       <Row gutter={16} type="flex" justify="start" align="middle">
-        <Col span={6}>
+        <Col {...leftColumnProps}>
           <Typography.Title>
             Autocat
           </Typography.Title>
@@ -171,7 +234,7 @@ const App: React.FC = () => {
             Train a Classifier
           </Button>
         </Col>
-        <Col offset={2} span={14}>
+        <Col {...rightColumnProps}>
           <Carousel autoplay speed={300} effect="fade" dots={false}>
             <img src={AutocatWebsite} alt="autocat display"></img>
             <img src={AutocatExample} alt="autocat example interaction"></img>
@@ -181,7 +244,7 @@ const App: React.FC = () => {
 
       <Padding/>    
       <Row gutter={16} type="flex" justify="start" align="middle">
-        <Col span={6}>
+        <Col {...leftColumnProps}>
           <Typography.Title>
             Save the NHS
           </Typography.Title>
@@ -193,7 +256,7 @@ const App: React.FC = () => {
             Read more
           </Button>
         </Col>
-        <Col offset={2} span={14}>
+        <Col {...rightColumnProps}>
           <Carousel autoplay speed={300} effect="fade">
             <img src={Nhs0} alt="save the nhs blog"></img>
             <img src={Nhs1} alt="save the nhs example"></img>
@@ -204,13 +267,13 @@ const App: React.FC = () => {
 
 
       <SmallPadding/>    
-      <Row gutter={16}>
-        <Col span={4}>
+      <Row gutter={16} type="flex" justify="start" align="middle">
+        <Col {...titleColumnProps}>
         <Typography.Title level={4}>
           Mark Neumann 
         </Typography.Title>
         </Col>
-        <Col span={6}>
+        <Col {...titleColumnProps}>
         <Typography.Title level={4}>
           <a href="mailto:mark.neumann.1992@gmail.com" target="_top" rel="noopener noreferrer">Email. </a>
           <a href="https://twitter.com/MarkNeumannnn" target="_blank" rel="noopener noreferrer"> Twitter. </a>
