@@ -63,11 +63,19 @@ const leftColumnProps = {
   },
   xs: {
     span:24
-  }
+  },
+  lg: {
+    span: 6,
+  },
+
 }
 const rightColumnProps = {
   md: {
     span: 14,
+    offset: 2
+  },
+  lg: {
+    span: 10,
     offset: 2
   },
   sm: {
@@ -80,6 +88,10 @@ const rightColumnProps = {
   }
 }
 const titleColumnProps = {
+  lg: {
+    span: 12,
+    offset: 0
+  },
   md: {
     span: 16,
     offset: 0
@@ -273,6 +285,8 @@ const App: React.FC = () => {
           Mark Neumann 
         </Typography.Title>
         </Col>
+      </Row>
+      <Row gutter={16} type="flex" justify="start" align="middle">
         <Col {...titleColumnProps}>
         <Typography.Title level={4}>
           <a href="mailto:mark.neumann.1992@gmail.com" target="_top" rel="noopener noreferrer">Email. </a>
