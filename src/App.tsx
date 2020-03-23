@@ -152,6 +152,7 @@ const App: React.FC = () => {
           <a href="mailto:mark.neumann.1992@gmail.com" target="_top" rel="noopener noreferrer">Email. </a>
           <a href="https://twitter.com/MarkNeumannnn" target="_blank" rel="noopener noreferrer"> Twitter. </a>
           <a href="https://github.com/DeNeutoy" target="_blank" rel="noopener noreferrer"> Github. </a>
+          <a href="http://markneumann.xyz/blog" target="_blank" rel="noopener noreferrer"> Blog. </a>
           <a href="./cv.pdf" download> CV. </a>
         </Typography.Title>
         </Col>
@@ -292,6 +293,7 @@ const App: React.FC = () => {
           <a href="mailto:mark.neumann.1992@gmail.com" target="_top" rel="noopener noreferrer">Email. </a>
           <a href="https://twitter.com/MarkNeumannnn" target="_blank" rel="noopener noreferrer"> Twitter. </a>
           <a href="https://github.com/DeNeutoy" target="_blank" rel="noopener noreferrer"> Github. </a>
+          <a href="http://markneumann.xyz/blog" target="_blank" rel="noopener noreferrer"> Blog. </a>
           <a href="./cv.pdf" download> CV. </a>
         </Typography.Title>
         </Col>
