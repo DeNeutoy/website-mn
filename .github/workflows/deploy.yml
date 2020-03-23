@@ -28,7 +28,9 @@ jobs:
         aws-region: eu-west-1
 
     - name: Build
-      run: yarn build
+      run: |
+        yarn install
+        yarn build
 
     - name: Deploy
       if: success()
