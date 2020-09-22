@@ -8,13 +8,13 @@ import ScispacyDemo from "./img/scispacyDemo.png";
 import ScispacyLinking from "./img/scispacyLinking.png";
 
 import AllennlpWebsite from "./img/allennlpWebsite.png";
-import SrlExample from "./img/srl.gif";
+import AllennlpDemo from "./img/allennlpDemo.png";
 
 import ElmoResults from "./img/elmoResults.png";
 import ElmoImage from "./img/elmoImage.png";
 
 import AutocatWebsite from "./img/autocat.png";
-import AutocatExample from "./img/autocat.gif";
+import AutocatResult from "./img/autocatResult.png";
 
 import Nhs0 from "./img/nhs0.png";
 import Nhs1 from "./img/nhs1.png";
@@ -179,7 +179,7 @@ const App: React.FC = () => {
         <Col {...rightColumnProps}>
           <Carousel autoplay speed={300} effect="fade" dots={false}>
             <img src={AllennlpWebsite} alt="allennlp logo" width={800}></img>
-            <img src={SrlExample} alt="allennlp logo" width={800}></img>
+            <img src={AllennlpDemo} alt="allennlp demo" width={800}></img>
           </Carousel>
         </Col>
       </Row>
@@ -251,7 +251,7 @@ const App: React.FC = () => {
         <Col {...rightColumnProps}>
           <Carousel autoplay speed={300} effect="fade" dots={false}>
             <img src={AutocatWebsite} alt="autocat display"></img>
-            <img src={AutocatExample} alt="autocat example interaction"></img>
+            <img src={AutocatResult} alt="autocat example interaction"></img>
           </Carousel>
         </Col>
       </Row>
