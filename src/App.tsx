@@ -1,5 +1,6 @@
 import React from 'react';
-import {Col as AntdCol, Row, Typography, Button, BackTop, Icon, Carousel} from "antd";
+import {Col as AntdCol, Row, Typography, Button, BackTop, Carousel} from "antd";
+import {CaretUpOutlined} from "@ant-design/icons"
 import styled from "styled-components";
 
 import ScispacyLogo from "./img/scispacy-logo.png";
@@ -124,7 +125,7 @@ const App: React.FC = () => {
     <React.Fragment>
       <BackTop>
       <strong style={{ color: 'rgba(64, 64, 64, 0.6)' }}>
-        <Icon type="caret-up" style={{ fontSize: '60px'}}/>
+        <CaretUpOutlined style={{ fontSize: '60px'}}/>
       </strong>
       </BackTop>
 
@@ -161,7 +162,7 @@ const App: React.FC = () => {
 
       <Padding/>    
       <SmallPadding/>    
-      <Row gutter={16} type="flex" justify="start" align="middle">
+      <Row gutter={16} justify="start" align="middle">
         <Col {...leftColumnProps}>
           <Typography.Title>
             AllenNLP
@@ -184,7 +185,7 @@ const App: React.FC = () => {
       </Row>
 
       <Padding/>    
-      <Row gutter={16} type="flex" justify="start" align="middle">
+      <Row gutter={16} justify="start" align="middle">
         <Col {...leftColumnProps}>
           <Typography.Title>
             Elmo
@@ -208,7 +209,7 @@ const App: React.FC = () => {
       </Row>
 
       <Padding/>    
-      <Row gutter={16} type="flex" justify="start" align="middle">
+      <Row gutter={16} justify="start" align="middle">
         <Col {...leftColumnProps}>
           <Typography.Title>
             SciSpaCy
@@ -233,7 +234,7 @@ const App: React.FC = () => {
       </Row>
 
       <Padding/>    
-      <Row gutter={16} type="flex" justify="start" align="middle">
+      <Row gutter={16} justify="start" align="middle">
         <Col {...leftColumnProps}>
           <Typography.Title>
             Autocat
@@ -256,7 +257,7 @@ const App: React.FC = () => {
       </Row>
 
       <Padding/>    
-      <Row gutter={16} type="flex" justify="start" align="middle">
+      <Row gutter={16} justify="start" align="middle">
         <Col {...leftColumnProps}>
           <Typography.Title>
             Save the NHS
@@ -280,14 +281,14 @@ const App: React.FC = () => {
 
 
       <SmallPadding/>    
-      <Row gutter={16} type="flex" justify="start" align="middle">
+      <Row gutter={16} justify="start" align="middle">
         <Col {...titleColumnProps}>
         <Typography.Title level={4}>
           Mark Neumann 
         </Typography.Title>
         </Col>
       </Row>
-      <Row gutter={16} type="flex" justify="start" align="middle">
+      <Row gutter={16} justify="start" align="middle">
         <Col {...titleColumnProps}>
         <Typography.Title level={4}>
           <a href="mailto:mark.neumann.1992@gmail.com" target="_top" rel="noopener noreferrer">Email. </a>
