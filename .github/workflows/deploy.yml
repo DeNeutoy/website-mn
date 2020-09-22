@@ -34,4 +34,6 @@ jobs:
 
     - name: Deploy
       if: success()
-      run: aws s3 sync ./build/ s3://markneumann.xyz/
+      run: |
+        aws s3 rm --recursive s3://markneumann.xyz/ --exclude "./blog/*" --exclude "./clarify/*" --exclude "./visualessays/*" --dryrun
+        aws s3 sync ./build/ s3://markneumann.xyz/

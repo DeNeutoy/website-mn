@@ -154,7 +154,7 @@ const App: React.FC = () => {
           <a href="https://twitter.com/MarkNeumannnn" target="_blank" rel="noopener noreferrer"> Twitter. </a>
           <a href="https://github.com/DeNeutoy" target="_blank" rel="noopener noreferrer"> Github. </a>
           <a href="http://markneumann.xyz/blog" target="_blank" rel="noopener noreferrer"> Blog. </a>
-          <a href="./cv.pdf" download> CV. </a>
+          <a href={process.env.PUBLIC_URL + "/cv.pdf"} download> CV. </a>
         </Typography.Title>
         </Col>
       </Row>
