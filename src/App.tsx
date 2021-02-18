@@ -1,5 +1,5 @@
 import React from 'react';
-import {Col as AntdCol, Row, Typography, Button, BackTop, Carousel} from "antd";
+import {Col as AntdCol, Row, Typography, Button as AntdButton, BackTop, Carousel} from "antd";
 import {CaretUpOutlined} from "@ant-design/icons"
 import styled from "styled-components";
 
@@ -16,6 +16,9 @@ import ElmoImage from "./img/elmoImage.png";
 import AutocatWebsite from "./img/autocat.png";
 import AutocatResult from "./img/autocatResult.png";
 
+import PawlsInterface from "./img/pawlsInterface.png";
+import PawlsRelations from "./img/pawlsRelations.png";
+
 import Nhs0 from "./img/nhs0.png";
 import Nhs1 from "./img/nhs1.png";
 
@@ -23,6 +26,7 @@ import Nhs1 from "./img/nhs1.png";
 const BigTitle = styled.h1`
 font-size: 6rem;
 padding-top: 100px;
+margin-bottom: 20px;
 font-weight: bold;
 /* 
 When the width is less than 720px (bootstrap md), scale the font size
@@ -54,6 +58,12 @@ const Centered = styled.div`
     }
 
 `;
+
+const Button = styled(AntdButton)`
+
+    margin-right: 8px
+`
+
 
 const leftColumnProps = {
   md: {
@@ -108,11 +118,11 @@ const titleColumnProps = {
 }
 
 
+/* 
+When the width is less than 720px (bootstrap md), center
+the column and slightly pad the bottom.
+*/
 const Col = styled(AntdCol)`
-    /* 
-    When the width is less than 720px (bootstrap md), center
-    the column and slightly pad the bottom.
-    */
     @media all and (max-width: 720px) {
       text-align: center;
       padding-bottom: 20px;
@@ -141,12 +151,16 @@ const App: React.FC = () => {
       <Row gutter={16}>
         <Col {...titleColumnProps}>
         <Typography.Title type="secondary" level={3}>
-          I'm a Senior Research Engineer at the 
+
+          I'm a researcher and engineer interested in natural language processing, neural networks and interactive machine learning.
+          I'm interested in NLP systems that work in real life.
+        </Typography.Title>
+        <Typography.Title type="secondary" level={3}>
+          Previously I was a Senior Research Engineer at the 
           <a href="https://allenai.org/" target="_blank" rel="noopener noreferrer"> Allen Institute for Artificial Intelligence. </a>
-          I co-created and maintain
+          I co-created
           <a href="https://allennlp.org/" target="_blank" rel="noopener noreferrer"> AllenNLP</a>
           , a library for Natural Language Processing research, focused on neural networks.
-          I'm interested in NLP systems that work in real life.
         </Typography.Title>
 
         <Typography.Title level={4}>
@@ -159,8 +173,6 @@ const App: React.FC = () => {
         </Col>
       </Row>
 
-
-      <Padding/>    
       <SmallPadding/>    
       <Row gutter={16} justify="start" align="middle">
         <Col {...leftColumnProps}>
@@ -174,6 +186,9 @@ const App: React.FC = () => {
           </Typography.Paragraph>
           <Button type="primary" href="https://allennlp.org" target="_blank">
             Install the library
+          </Button>
+          <Button type="primary" href="https://arxiv.org/abs/1803.07640" target="_blank">
+            Paper
           </Button>
         </Col>
         <Col {...rightColumnProps}>
@@ -223,6 +238,9 @@ const App: React.FC = () => {
           <Button type="primary" href="https://allenai.github.io/scispacy/" target="_blank">
             Install the library
           </Button>
+          <Button type="primary" href="https://arxiv.org/abs/1902.07669" target="_blank">
+            Paper
+          </Button>
         </Col>
         <Col {...rightColumnProps}>
           <Carousel autoplay speed={300} effect="fade" dots={false}>
@@ -260,6 +278,35 @@ const App: React.FC = () => {
       <Row gutter={16} justify="start" align="middle">
         <Col {...leftColumnProps}>
           <Typography.Title>
+            PAWLS
+          </Typography.Title>
+          <Typography.Paragraph strong>
+            PAWLS (PDF Annotation With Labels and Structure) is a 'PDF Native' annotation interface
+            which allows annotators to draw bounding boxes directly on top of a pdf canvas. PAWLS is
+            an experiment to see what happens if annotators see source text in it's original context.
+          </Typography.Paragraph>
+          <Button type="primary" href="https://pawls.apps.allenai.org/" target="_blank">
+            Demo
+          </Button>
+          <Button type="primary" href="https://arxiv.org/abs/2101.10281" target="_blank">
+            Paper
+          </Button>
+          <Button type="primary" href="https://github.com/allenai/pawls" target="_blank">
+            Code
+          </Button>
+        </Col>
+        <Col {...rightColumnProps}>
+          <Carousel autoplay speed={300} effect="fade" dots={false}>
+            <img src={PawlsInterface} alt="pawls annotation interface"></img>
+            <img src={PawlsRelations} alt="pawls relation annotation"></img>
+          </Carousel>
+        </Col>
+      </Row>
+
+      <Padding/>    
+      <Row gutter={16} justify="start" align="middle">
+        <Col {...leftColumnProps}>
+          <Typography.Title>
             Save the NHS
           </Typography.Title>
           <Typography.Paragraph strong>
@@ -277,8 +324,6 @@ const App: React.FC = () => {
           </Carousel>
         </Col>
       </Row>
-
-
 
       <SmallPadding/>    
       <Row gutter={16} justify="start" align="middle">
