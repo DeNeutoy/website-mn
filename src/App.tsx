@@ -34,7 +34,8 @@ with respect to the view port.
  */
 @media all and (max-width: 720px) {
   font-size: 8vw;
-  text-align: center
+  text-align: center;
+  padding-top: 150px;
 }
 
 `;
@@ -129,10 +130,56 @@ const Col = styled(AntdCol)`
     }
 `
 
+const FixedHeader = styled.svg`
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    @media all and (max-width: 720px) {
+      height:200px;
+
+    }
+`
+
+const CoolCircles = () => {
+
+  const arr = [...Array(800).keys() as unknown as number[]]
+  const colours = ['#a50026','#d73027','#f46d43','#fdae61','#fee08b','#d9ef8b','#a6d96a','#66bd63','#1a9850','#006837']
+  return (
+    <FixedHeader>
+     {arr.map(i => {
+
+        const x = 100 - Math.exp(Math.random() * 4.5)
+        // Y is the same as x, but scaled back IF the x value is large.
+        // this stops it covering up the text.
+        const y =  Math.exp(Math.random() * 4.5) - (100 - x)
+        const r = Math.random() * 25
+        const c = colours[Math.floor(Math.random() * 10)]
+
+        return (
+          <circle
+            key={i}
+            cx={`${x}%`}
+            cy={`${y}%`}
+            r={r} 
+            stroke="black" 
+            stroke-width="3" 
+            fill={c}
+            />
+        )
+
+})}
+    </FixedHeader>
+  )
+}
+
+
 
 const App: React.FC = () => {
   return (
     <React.Fragment>
+    <CoolCircles/>
       <BackTop>
       <strong style={{ color: 'rgba(64, 64, 64, 0.6)' }}>
         <CaretUpOutlined style={{ fontSize: '60px'}}/>
